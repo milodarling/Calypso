@@ -49,8 +49,7 @@ BOOL 5Enabled;
 
 %hook SBLockOverlayStyleProperties
 -(double) blurRadius{
-  if(!isEnabled)
-  {
+{
     if(masterEnabled == YES)
         {
             if(3Enabled == YES)
