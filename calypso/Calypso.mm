@@ -30,7 +30,7 @@
         
         label = [[UILabel alloc] initWithFrame:labelFrame];
         [label setNumberOfLines:1];
-        label.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:44];
+        label.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:48];
         [label setText:@"Calypso"];
         [label setBackgroundColor:[UIColor clearColor]];
         label.textColor = [UIColor blackColor];
