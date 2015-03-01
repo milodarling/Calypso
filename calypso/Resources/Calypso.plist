@@ -58,7 +58,7 @@
 			<key>PostNotification</key>
 			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>isEnabled</string>
+			<string>2Enabled</string>
 			<key>label</key>
 			<string>Disable Spotlight Search</string>
 		</dict>
@@ -78,7 +78,7 @@
 			<key>PostNotification</key>
 			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>!isEnabled</string>
+			<string>3Enabled</string>
 			<key>label</key>
 			<string>Disable LS Blur</string>
 		</dict>
@@ -92,7 +92,7 @@
 			<key>PostNotification</key>
 			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>isEnabled</string>
+			<string>4Enabled</string>
 			<key>label</key>
 			<string>Disable LS Tint</string>
 		</dict>
@@ -112,7 +112,7 @@
 			<key>PostNotification</key>
 			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>!isEnabled</string>
+			<string>5Enabled</string>
 			<key>label</key>
 			<string>Allow Nested Folders</string>
 		</dict>
