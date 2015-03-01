@@ -1,9 +1,9 @@
 BOOL masterEnabled;
-BOOL masterEnabled;
-BOOL masterEnabled;
-BOOL masterEnabled;
-BOOL masterEnabled;
-BOOL masterEnabled;
+BOOL 1Enabled;
+BOOL 2Enabled;
+BOOL 3Enabled;
+BOOL 4Enabled;
+BOOL 5Enabled;
 
 %hook SBVoiceControlController
 -(bool) handleHomeButtonHeld
