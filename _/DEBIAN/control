@@ -1,0 +1,10 @@
+Package: red.dingo.calypso
+Name: Calypso
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: Access many internal settings of iOS 8.
+Maintainer: a4twerks and T_Dogg_94
+Author: a4twerks and T_Dogg_94
+Section: Tweaks
+Version: 0.0.1-8
+Installed-Size: 152
