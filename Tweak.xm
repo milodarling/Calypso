@@ -49,7 +49,7 @@ static BOOL 5Enabled = YES;
 %end
 
 %hook SBLockOverlayStyleProperties
--(double) blurRadius{
+-(double) blurRadius
 {
     if(masterEnabled == YES)
         {
