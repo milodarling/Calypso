@@ -69,7 +69,7 @@ static BOOL 5Enabled = YES;
 }
 %end
 
- %hook SBLockOverlayStyleProperties   
+%hook SBLockOverlayStyleProperties   
 -(double) tintAlpha
 {
     if(masterEnabled == YES)
