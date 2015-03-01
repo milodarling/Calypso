@@ -125,8 +125,6 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Respring</string>
 			<key>FooterText</key>
 			<string>Please respring to apply any changes.</string>
 		</dict>
