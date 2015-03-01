@@ -1,9 +1,9 @@
 static BOOL masterEnabled = YES;
-static BOOL 1Enabled = YES;
-static BOOL 2Enabled = YES;
-static BOOL 3Enabled = YES;
-static BOOL 4Enabled = YES;
-static BOOL 5Enabled = YES;
+static BOOL oneEnabled = YES;
+static BOOL twoEnabled = YES;
+static BOOL threeEnabled = YES;
+static BOOL fourEnabled = YES;
+static BOOL fiveEnabled = YES;
 
 
 %hook SBVoiceControlController
@@ -11,7 +11,7 @@ static BOOL 5Enabled = YES;
 {
     if(masterEnabled == YES)
         {
-            if(1Enabled == YES)
+            if(oneEnabled == YES)
                 {
                 return false;
                 }
@@ -32,7 +32,7 @@ static BOOL 5Enabled = YES;
 {
     if(masterEnabled == YES)
         {
-            if(2Enabled == YES)
+            if(twoEnabled == YES)
                 {
                 return false;
                 }
@@ -53,7 +53,7 @@ static BOOL 5Enabled = YES;
 {
     if(masterEnabled == YES)
         {
-            if(3Enabled == YES)
+            if(threeEnabled == YES)
                 {
                 return 0;
                 }
@@ -74,7 +74,7 @@ static BOOL 5Enabled = YES;
 {
     if(masterEnabled == YES)
         {
-            if(4Enabled == YES)
+            if(fourEnabled == YES)
                 {
                 return 0;
                 }
@@ -95,7 +95,7 @@ static BOOL 5Enabled = YES;
 {
     if(masterEnabled == YES)
         {
-            if(5Enabled == YES)
+            if(fiveEnabled == YES)
                 {
                 return true;
                 }
@@ -115,11 +115,11 @@ static void loadPreferences() {
 CFPreferencesAppSynchronize(CFSTR("red.dingo.calypso"));
 
 masterEnabled = [(id)CFPreferencesCopyAppValue(CFSTR("masterEnabled"), CFSTR("red.dingo.calypso")) boolValue];
-1Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("1Enabled"), CFSTR("red.dingo.calypso")) boolValue];
-2Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("2Enabled"), CFSTR("red.dingo.calypso")) boolValue];
-3Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("3Enabled"), CFSTR("red.dingo.calypso")) boolValue];
-4Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("4Enabled"), CFSTR("red.dingo.calypso")) boolValue];
-5Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("5Enabled"), CFSTR("red.dingo.calypso")) boolValue];
+oneEnabled = [(id)CFPreferencesCopyAppValue(CFSTR("oneEnabled"), CFSTR("red.dingo.calypso")) boolValue];
+twoEnabled = [(id)CFPreferencesCopyAppValue(CFSTR("twoEnabled"), CFSTR("red.dingo.calypso")) boolValue];
+threeEnabled = [(id)CFPreferencesCopyAppValue(CFSTR("threeEnabled"), CFSTR("red.dingo.calypso")) boolValue];
+fourEnabled = [(id)CFPreferencesCopyAppValue(CFSTR("fourEnabled"), CFSTR("red.dingo.calypso")) boolValue];
+fiveEnabled = [(id)CFPreferencesCopyAppValue(CFSTR("fiveEnabled"), CFSTR("red.dingo.calypso")) boolValue];
 }
 
 %ctor {
