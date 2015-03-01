@@ -7,6 +7,30 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
+			<key>footerCellClass</key>
+			<string>CalypsoCustomCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>red.dingo.calypso</string>
+			<key>PostNotification</key>
+			<string>red.dingo.calyspo/settingschanged</string>
+			<key>key</key>
+			<string>masterEnabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>Calypso - Assistant Settings</string>
 		</dict>
@@ -17,8 +41,10 @@
 			<true/>
 			<key>defaults</key>
 			<string>red.dingo.calypso</string>
+			<key>PostNotification</key>
+			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>!isEnabled</string>
+			<string>oneEnabled</string>
 			<key>label</key>
 			<string>Disable Voice Control</string>
 		</dict>
@@ -35,8 +61,10 @@
 			<true/>
 			<key>defaults</key>
 			<string>red.dingo.calypso</string>
+			<key>PostNotification</key>
+			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>isEnabled</string>
+			<string>twoEnabled</string>
 			<key>label</key>
 			<string>Disable Spotlight Search</string>
 		</dict>
@@ -53,8 +81,10 @@
 			<true/>
 			<key>defaults</key>
 			<string>red.dingo.calypso</string>
+			<key>PostNotification</key>
+			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>!isEnabled</string>
+			<string>threeEnabled</string>
 			<key>label</key>
 			<string>Disable LS Blur</string>
 		</dict>
@@ -65,8 +95,10 @@
 			<true/>
 			<key>defaults</key>
 			<string>red.dingo.calypso</string>
+			<key>PostNotification</key>
+			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>isEnabled</string>
+			<string>fourEnabled</string>
 			<key>label</key>
 			<string>Disable LS Tint</string>
 		</dict>
@@ -83,16 +115,18 @@
 			<true/>
 			<key>defaults</key>
 			<string>red.dingo.calypso</string>
+			<key>PostNotification</key>
+			<string>red.dingo.calyspo/settingschanged</string>
 			<key>key</key>
-			<string>!isEnabled</string>
+			<string>fiveEnabled</string>
 			<key>label</key>
 			<string>Allow Nested Folders</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Respring</string>
+			<key>FooterText</key>
+			<string>Please respring to apply any changes.</string>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -103,10 +137,16 @@
 			<string>Respring</string>
 		</dict>
 		<dict>
-			<key>FooterText</key>
-			<string>Please respring to apply any changes.</string>
 			<key>cell</key>
 			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>followTwitter:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Follow me on Twitter</string>
 		</dict>
 	</array>
 	<key>title</key>
