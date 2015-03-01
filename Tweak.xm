@@ -1,9 +1,10 @@
-BOOL masterEnabled;
-BOOL 1Enabled;
-BOOL 2Enabled;
-BOOL 3Enabled;
-BOOL 4Enabled;
-BOOL 5Enabled;
+static BOOL masterEnabled = YES;
+static BOOL 1Enabled = YES;
+static BOOL 2Enabled = YES;
+static BOOL 3Enabled = YES;
+static BOOL 4Enabled = YES;
+static BOOL 5Enabled = YES;
+
 
 %hook SBVoiceControlController
 -(bool) handleHomeButtonHeld
@@ -110,23 +111,23 @@ BOOL 5Enabled;
 }
 %end
 
-static void loadPrefs()
-{
-  NSMutableDictionary *prefs = [NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/red.dingo.calypso.plist"];
-  if(prefs)
-    {
-      masterEnabled = [prefs objectForKey:@"masterEnabled"] ? [[prefs objectForKey:@"masterEnabled"] boolValue] : true;
-      1Enabled = [prefs objectForKey:@"1Enabled"] ? [[prefs objectForKey:@"1Enabled"] boolValue] : true;
-      2Enabled = [prefs objectForKey:@"2Enabled"] ? [[prefs objectForKey:@"2Enabled"] boolValue] : true;
-      3Enabled = [prefs objectForKey:@"3Enabled"] ? [[prefs objectForKey:@"3Enabled"] boolValue] : true;
-      4Enabled = [prefs objectForKey:@"4Enabled"] ? [[prefs objectForKey:@"4Enabled"] boolValue] : true;
-      5Enabled = [prefs objectForKey:@"5Enabled"] ? [[prefs objectForKey:@"5Enabled"] boolValue] : true;
-    }
-    [prefs release];
-  }
+static void loadPreferences() {
+CFPreferencesAppSynchronize(CFSTR("red.dingo.calypso"));
 
-  %ctor
-  {
-    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("red.dingo.calyspo/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
-    loadPrefs();
-    }
+masterEnabled = [(id)CFPreferencesCopyAppValue(CFSTR("masterEnabled"), CFSTR("red.dingo.calypso")) boolValue];
+1Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("1Enabled"), CFSTR("red.dingo.calypso")) boolValue];
+2Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("2Enabled"), CFSTR("red.dingo.calypso")) boolValue];
+3Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("3Enabled"), CFSTR("red.dingo.calypso")) boolValue];
+4Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("4Enabled"), CFSTR("red.dingo.calypso")) boolValue];
+5Enabled = [(id)CFPreferencesCopyAppValue(CFSTR("5Enabled"), CFSTR("red.dingo.calypso")) boolValue];
+}
+
+%ctor {
+CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(),
+NULL,
+(CFNotificationCallback)loadPreferences,
+CFSTR("red.dingo.calyspo/settingschanged"),
+NULL,
+CFNotificationSuspensionBehaviorDeliverImmediately);
+loadPreferences();
+}
